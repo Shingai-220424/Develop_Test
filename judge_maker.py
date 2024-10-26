@@ -9,8 +9,8 @@ def make_judge(grade, points):
         int: 判定結果 (1: 合格, 2: 再テスト, 3: 不合格)
     """
     result = None
-    is_failure = any(data < 10 for data in points)
-    is_retest = sum(data <= 30 for data in points) >= 3
+    is_failure = any(data < 10 for data in points) # 点数リストの中に10天未満の点数が1つでもあればTrue
+    is_retest = sum(data <= 30 for data in points) >= 3 # 30点以下の点数が3つ以上あるかどうかをカウントし、3以上であればTrue
 
     if is_failure or grade == 'E':
         result = 3  # 不合格
