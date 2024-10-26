@@ -19,7 +19,7 @@ def make_judge(grade, points):
     elif grade in ('A', 'B', 'C'):
         result = 1  # 合格
     else:
-        raise ValueError("Invalid grade. Must be A, B, C, D, or E.")
+        raise ValueError("gradeにA～E以外の文字が入力されています")
 
     return result
 
@@ -30,3 +30,4 @@ if __name__ == '__main__':
     print(make_judge("D", [60, 20, 50, 40, 30, 10, 90, 100, 85, 75]))  # 再テスト: 2
     print(make_judge("E", [5, 10, 15, 20, 25, 30, 35, 40, 45, 50]))  # 不合格: 3
     print(make_judge("C", [90, 80, 70, 60, 50, 40, 30, 20, 10, 0]))  # 不合格: 3
+    print(make_judge("G", [90, 80, 70, 60, 50, 40, 30, 20, 10, 0]))  # エラー
